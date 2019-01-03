@@ -3,7 +3,7 @@ const CronJob = require('cron').CronJob;
 module.exports = function(controller) {
 
     // Assumptions: 
-    // CAHTGAGBX is #waywo
+    // CF1T0BW4W is #waywo
     // The bot has already joined #waywo
 
     controller.on('create_team,update_team', function(bot, message) {
@@ -16,14 +16,14 @@ module.exports = function(controller) {
         console.log('============================================================');
 
         // 8:00 am Thursdays
-        const cronPattern = '00 00 08 * * 4';
+        const cronPattern = '0 0/15 0 * * *';
         const nextDatesCount = 5;
         
         console.log('waywo: Installing Job ['+ cronPattern +']');
         controller.waywoJob = new CronJob(cronPattern, function() {
 
             bot.say({
-                channel: 'CAHTGAGBX',
+                channel: 'CF1T0BW4W',
                 text: '<!channel> What are you working on this week?'
             });
 
