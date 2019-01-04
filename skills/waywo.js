@@ -16,7 +16,7 @@ module.exports = function(controller) {
         console.log('============================================================');
 
         // 8:00 am Thursdays
-        const cronPattern = '0 */15 * * * *';
+        const cronPattern = '0 0 * * * *';
         const nextDatesCount = 5;
         
         console.log('waywo: Installing Job ['+ cronPattern +']');
